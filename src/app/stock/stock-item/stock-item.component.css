@@ -1,0 +1,52 @@
+.stock-container{
+    border: 1px solid;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 10px;
+    margin: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    width: 6cm;
+    min-height: 100px;
+    /* font-weight: bold; */
+}
+.name{
+    text-align: center;
+}
+.stock-container .name h3, .stock-container .name h4{
+    display: inline-block;
+}
+.price{
+    text-align: center;
+}
+.percent{
+    text-align: center;
+}
+.exchange{
+    text-align: center;
+}
+.btnAdd{
+    margin: auto;
+    display: block;
+    border: none;
+    border-radius: 5px;
+    color: rgb(6, 6, 6);
+    font-weight: bold;
+    padding: 7px;
+}
+.positive{
+    /* background-color: green;
+    color: rgb(255, 255, 255); */
+    color: green;
+}
+.negative{
+    /* background-color: red;
+    color: rgb(255, 255, 255); */
+    color: red;
+}
+.large-change{
+    font-size: 1.2em;
+}
+.small-change{
+    font-size: 0.8em;
+}

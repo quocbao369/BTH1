@@ -1,0 +1,21 @@
+<p class="banner">Infor Stock</p>
+<div class="stock-container">
+    <div class="name">{{stock.name + ' (' + stock.code + ')'}}</div>
+    <div class="exchange">{{stock.exchange}}</div>
+    
+    <div class="if">Price:<span
+        [class.positive]="stock.price > stock.previousPrice"
+        [class.negative]="stock.price <= stock.previousPrice">{{stock.price}}$</span></div>
+    <div class="if">Previousprice: {{stock.previousPrice}} $</div>
+    <div class="if">PercentChange: {{getPercentChange()}}%</div>
+    <br/>
+  <button mat-raised-button color="primary" class="btnAdd" 
+            (click)="onToggleFavorite($event)"
+            *ngIf="!stock.favorite">Add to Favorite</button>
+    <button mat-raised-button color="primary" class="btnAdd" 
+            (click)="onToggleFavorite($event)"
+            *ngIf="stock.favorite">Remove Favorite</button>
+    <a style="margin-left: 90%;" (click)="detele($event)" routerLink="../stock-list"><mat-icon>delete</mat-icon></a>
+    <a style="text-decoration: none;" routerLink="../stock-list"><mat-icon>keyboard_backspace</mat-icon></a>
+
+    </div>

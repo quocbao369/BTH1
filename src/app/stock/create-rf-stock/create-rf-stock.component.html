@@ -1,0 +1,27 @@
+<p class="topCreaterf">Create Stock Reacitve Form</p>
+<div class="form-group">
+    <form [formGroup]="stockForm"(ngSubmit)="onSubmit()">
+        <div class="stock-name">
+            <input type="text"
+            placeholder="Stock Name"
+            name="stockName"
+            formControlName="name">
+        </div>
+        <div class="stock-code">
+            <input type="text"
+            placeholder="Stock Code"
+            name="stockCode"
+            formControlName="code">
+            
+        </div>
+        <div class="stock-price">
+            <input type="number"
+            placeholder="Stock Price"
+            name="stockPrice"
+            formControlName="price">
+        </div>
+        <button (click)="onSubmit()">Submit</button>
+    </form>
+</div>
+<h4>Form Control value:{{stockForm.value | json}}</h4>
+<h4>Form Control status:{{stockForm.status | json}}</h4>

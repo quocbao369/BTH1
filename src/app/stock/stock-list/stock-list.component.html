@@ -1,0 +1,4 @@
+<p class="bannerST">Stock Tracker</p>
+<app-stock-item *ngFor="let stock of stocks" [stock]="stock"
+                (toggleFavorite)="onToggleFavorite($event)">
+</app-stock-item>

@@ -1,0 +1,84 @@
+<p class="topCreate">Create Stock Form</p>
+<div *ngIf="message">{{messageService.message}}</div>
+<div class="form-group">
+    <form (ngSubmit)="createStock(stockForm)" #stockForm="ngForm">
+        <div>
+            The following element changes form green to red when it is invalid
+        </div>
+        <div class="stock-name">
+            <input type="text"
+                placeholder="Stock Name"
+                required
+                name="stockName"
+                #stockName="ngModel"
+                [(ngModel)]="stock.name">
+        </div>
+        <div *ngIf="stockName.errors && stockName.errors['required']">
+            Stock Name is Mandatory
+        </div>
+        <div>
+            The following element changes form green to red when it has been modified
+        </div>
+        <div class="stock-code">
+            <input type="text"
+                placeholder="Stock Code"
+                required
+                minlength="2"
+                name="stockCode"
+                #stockCode="ngModel"
+                [(ngModel)]="stock.code">
+        </div>
+        <div *ngIf="stockCode.dirty && stockCode.invalid">
+            <div *ngIf="stockCode.errors && stockCode.errors['required']">
+            Stock Code is Mandatory
+           </div>
+           <div *ngIf="stockCode.errors && stockCode.errors['minlength']">
+            Stock Code must be atleast of length 2
+           </div>
+        </div>
+        <div>
+            The following element changes form green to red when it is visited by the user , regardless of change
+        </div>
+        <div class="stock-price">
+            <input type="number"
+                placeholder="Stock Price"
+                name="stockPrice"
+                required
+                #stockPrice="ngModel"
+                [(ngModel)]="stock.price"
+                (ngModelChange)="setStockPrice($event)">
+        </div>
+        <div *ngIf="stockPrice.dirty && stockPrice.invalid">
+            <div *ngIf="stockPrice.errors && stockPrice.errors['required']">
+                Stock Price is Mandatory
+            </div>
+        </div>
+        <!-- <div class="stock_exchange">
+            <select name="stockExchange" [(ngModel)]="stock.exchange">
+                <option value="NYSE">NYSE</option>
+                <option value="NASDAQ">NASDAQ</option>
+                <option value="OTHER">OTHER</option>
+            </select>
+        </div> -->
+        <div class="stock_exchange">
+            <div>
+                <select name="stockExchange" [(ngModel)]="stock.exchange">
+                <option *ngFor="let exchange of exchanges"
+                [ngValue]="exchange">{{exchange}}</option>
+            </select>
+            </div>
+        </div>
+        <div class="stock-confirm">
+            <input type="checkbox" 
+                    name="stockConfirm" 
+                    [(ngModel)]="confirmed">
+            I confirm that the information provided above is accurate!
+        </div>
+        <button [disabled]="!confirmed" type="submit">Create</button>
+   
+    </form>
+    
+</div>
+<h4>Stock Name is {{stock | json}}</h4>
+<h4>Data has been confirmed: {{confirmed}}</h4>
+

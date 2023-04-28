@@ -1,0 +1,15 @@
+<div class="stock-container" routerLink="/stock/{{stock.id}}">
+    <div class="name">{{stock.name + '('+ stock.code +')'}}</div>
+    <div class="exchange">{{stock.exchange}}</div>
+    <div class="price"[class.positive]="stock.price > stock.previousPrice"
+            [class.negative]="stock.price <= stock.previousPrice">$ {{stock.price}}</div>
+    <!-- <div class="percent"><span>{{stock.getPriceChange() | currency}}</span>
+                        <span>({{stock.getPercentChange()}}%)</span></div> -->
+    <br/>
+    <button class="btnAdd" 
+            (click)="onToggleFavorite($event)"
+            *ngIf="!stock.favorite">Add to Favorite</button>
+    <button class="btnAdd" 
+            (click)="onToggleFavorite($event)"
+            *ngIf="stock.favorite">Remove Favorite</button>
+</div>

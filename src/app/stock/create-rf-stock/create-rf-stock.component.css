@@ -1,0 +1,17 @@
+.stock-name .ng-valid,
+.stock-code .ng-valid,
+.stock-price .ng-valid{
+    background-color: green;
+    color: white;
+}
+.stock-name .ng-invalid,
+.stock-code .ng-invalid,
+.stock-price .ng-invalid{
+    background-color: pink;
+}
+.topCreaterf{
+    background-color: #4356a6;
+    color: white;
+    padding: 15px;
+    font-family:Arial, Helvetica, sans-serif;
+}

@@ -1,0 +1,52 @@
+<!-- <p class="topCreate">Register</p> -->
+<div *ngIf="message">{{message}}</div>
+<div class="form-group">
+    <form (ngSubmit)="createUser(userForm)" #userForm="ngForm">
+    <table>
+        <tr>
+            <td style="text-align: center;"><h2>REGISTER</h2></td>
+        </tr>
+        <tr>
+            <td><span><p>Username</p></span></td>
+        </tr>
+        <tr>
+            <td><input type="text" placeholder="Username"
+                name="userName"
+                #userName="ngModel"
+                [(ngModel)]="user.username"></td>
+        </tr>
+        <tr>
+            <td><span><p>Password</p></span></td>
+        </tr>
+        <tr>
+            <td><input type="text" placeholder="Password"
+                name="passWord"
+                #passWord="ngModel"
+                [(ngModel)]="user.password"></td>
+        </tr>
+        <tr>
+            <td><span><p>Re-Password</p></span></td>
+        </tr>
+        <tr>
+            <td><input type="text" placeholder="Re-Password"></td>
+        </tr>
+        <tr>
+            <td><span><p>Email</p></span></td>
+        </tr>
+        <tr>
+            <td><input type="text" placeholder="Email"
+                name="email"
+                #email="ngModel"
+                [(ngModel)]="user.email"></td>
+        </tr>
+        <tr style="text-align: right;">
+            <td><a href="" style="text-decoration: none;">Help?</a></td>
+        </tr>
+        <tr>
+            <td style="text-align: center;"> <button type="submit">OK</button></td>
+        </tr>
+    </table>
+</form>
+<!-- <h4>Thong tin dang ki:{{user | json}}</h4> -->
+</div>
+
