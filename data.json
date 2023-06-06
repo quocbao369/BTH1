@@ -26,6 +26,33 @@
       "exchange": "NYSE",
       "favorite": "false",
       "id": 8
+    },
+    {
+      "name": "Last Stock Company",
+      "code": "LSC",
+      "price": "876",
+      "previousPrice": "765",
+      "exchange": "NYSE",
+      "favorite": "false",
+      "id": 9
+    },
+    {
+      "name": "Last Stock Company",
+      "code": "LSC",
+      "price": "876",
+      "previousPrice": "765",
+      "exchange": "NYSE",
+      "favorite": "false",
+      "id": 10
+    },
+    {
+      "name": "Last Stock Company",
+      "code": "LSC",
+      "price": "876",
+      "previousPrice": "765",
+      "exchange": "NYSE",
+      "favorite": "false",
+      "id": 11
     }
   ],
   "user": [
